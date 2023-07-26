@@ -3,7 +3,7 @@ const cors=require("cors");
 const mongoose=require("mongoose");
 const dotenv=require("dotenv").config();
 const Stripe = require('stripe');
-const path = require("path");
+// const path = require("path");
 
 
 
@@ -14,12 +14,12 @@ app.use(express.json({limit:"10mb"}));
 const PORT=process.env.PORT||8080;
 
 //static file
-if (process.env.NODE_ENV === "production") {
-   app.use(express.static("frontend/build"));
-   app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-   });
-}
+// if (process.env.NODE_ENV === "production") {
+//    app.use(express.static("frontend/build"));
+//    app.get("*", (req, res) => {
+//       res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+//    });
+// }
 
 
 //mongodb connection
