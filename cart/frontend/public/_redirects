@@ -1,5 +1,1 @@
-[[redirects]]
-  from = "/api/*"
-  to = "https://test1-czhk.onrender.com/:splat"
-  status = 200
-  force = true
+/*  /index.html 200
