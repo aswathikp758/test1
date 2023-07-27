@@ -13,9 +13,9 @@ app.use(express.json({limit:"10mb"}));
 app.use(express.static(path.join(__dirname,'./frontend/build')))
 
 //rest api
-app.use('*',function(req,res){
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-})
+// app.use('*',function(req,res){
+//     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+// })
 
 
 
