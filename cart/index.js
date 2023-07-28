@@ -224,31 +224,7 @@ app.post("/checkout-payment",async(req,res)=>
 //save payment status in data 
 //api
 
-// app.post("/paymentStatus",async(req,res)=>{
-//     console.log(req.body)
-//     const data= await orderModel(req.body)
-//     data.save();
-//    // res.send({message:"upload successfully"})
-// })
 
-
-//--------------------------
-// app.post("/delete/:productId",async(req,res)=>{
-//     const productId=req.params.productId;
-//     try{
-//         await 
-//         db.collection("products")
-//         .doc(`/${productId}`)
-//         .delete()
-//         .then((result)=>{
-//             return res.status(200).send({success:true,data:result});
-//         });
-//       }
-//     catch(err){
-//        return res.send({success:false,msg:`Error:${err}`});
-
-//     }
-// })
 app.get("/getdata",async(req,res)=>{
     const data=await productModel.find({})
     res.json({success:true,data:data})
