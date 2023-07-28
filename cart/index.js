@@ -10,26 +10,10 @@ const path = require("path");
 const app=express();
 app.use(cors());
 app.use(express.json({limit:"10mb"}));
-app.use(express.static(path.join(__dirname,'./frontend/build')))
-
-//rest api
-// app.use('*',function(req,res){
-//     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-// })
-
-
+app.use(express.static(path.join(__dirname,"frontend","build")));
 
 
 const PORT=process.env.PORT||8080;
-
-//static file
-// if (process.env.NODE_ENV === "production") {
-//    app.use(express.static("frontend/build"));
-//    app.get("/", (req, res) => {
-//       res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-//    });
-// }
-
 
 //mongodb connection
 console.log(process.env.MONGODB_URL)
@@ -56,14 +40,11 @@ const userModel=mongoose.model("user",userSchema)
 
 
 //api
-// app.get("/",(req,res)=>{
-//     res.send("Server is running")
-// });
+app.get("/",(req,res)=>{
+    // res.send("Server is running")
+    res.sendFile(path.join(__dirname,"frontend","build","index.html"));
+});
 
-app.get("/",async(req,res)=>{
-    const data=await productModel.find({})
-    res.json({success:true,data:data})
-})
 
 
 //signup
