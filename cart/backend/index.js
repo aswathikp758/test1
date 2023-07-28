@@ -56,9 +56,16 @@ const userModel=mongoose.model("user",userSchema)
 
 
 //api
-app.get("/",(req,res)=>{
-    res.send("Server is running")
-});
+// app.get("/",(req,res)=>{
+//     res.send("Server is running")
+// });
+
+app.get("/",async(req,res)=>{
+    const data=await productModel.find({})
+    res.json({success:true,data:data})
+})
+
+
 //signup
 app.post("/signup",async(req,res)=>{
     console.log(req.body)
